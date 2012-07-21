@@ -1,0 +1,14 @@
+c:\users\werllesson\documents\visual studio 2010\Projects\RestauranteServidor\RestauranteServidor\bin\Debug\RestauranteServidor.exe
+c:\users\werllesson\documents\visual studio 2010\Projects\RestauranteServidor\RestauranteServidor\bin\Debug\RestauranteServidor.pdb
+c:\users\werllesson\documents\visual studio 2010\Projects\RestauranteServidor\RestauranteServidor\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\werllesson\documents\visual studio 2010\Projects\RestauranteServidor\RestauranteServidor\obj\x86\Debug\RestauranteServidor.Form1.resources
+c:\users\werllesson\documents\visual studio 2010\Projects\RestauranteServidor\RestauranteServidor\obj\x86\Debug\RestauranteServidor.Properties.Resources.resources
+c:\users\werllesson\documents\visual studio 2010\Projects\RestauranteServidor\RestauranteServidor\obj\x86\Debug\GenerateResource.read.1.tlog
+c:\users\werllesson\documents\visual studio 2010\Projects\RestauranteServidor\RestauranteServidor\obj\x86\Debug\GenerateResource.write.1.tlog
+c:\users\werllesson\documents\visual studio 2010\Projects\RestauranteServidor\RestauranteServidor\obj\x86\Debug\RestauranteServidor.exe
+c:\users\werllesson\documents\visual studio 2010\Projects\RestauranteServidor\RestauranteServidor\obj\x86\Debug\RestauranteServidor.pdb
+c:\users\werllesson\documents\visual studio 2010\Projects\RestauranteServidor\RestauranteServidor\obj\x86\Debug\RestauranteServidor.View.CadFornecedor.resources
+C:\Users\werllesson\documents\visual studio 2010\Projects\RestauranteServidor\RestauranteServidor\obj\x86\Debug\RestauranteServidor.View.CadCidades.resources
+C:\Users\werllesson\documents\visual studio 2010\Projects\RestauranteServidor\RestauranteServidor\obj\x86\Debug\RestauranteServidor.View.CadGrupo.resources
+C:\Users\werllesson\documents\visual studio 2010\Projects\RestauranteServidor\RestauranteServidor\obj\x86\Debug\RestauranteServidor.View.CadSubGrupo.resources
+C:\Users\werllesson\documents\visual studio 2010\Projects\RestauranteServidor\RestauranteServidor\obj\x86\Debug\RestauranteServidor.View.CadProdutos.resources
