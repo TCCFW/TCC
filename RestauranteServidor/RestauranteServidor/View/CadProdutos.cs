@@ -274,6 +274,10 @@ namespace RestauranteServidor.View
                 {
                     RecebeUltimoProduto(Reg_Atual);
                 }
+                else
+                {
+                    RecebeUltimoProduto(0);
+                }
                 salvanovo = 0;
             }
         }
