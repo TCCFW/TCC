@@ -14,7 +14,7 @@ namespace RestauranteServidor.BLL
             {
                 throw new Exception("A descricao é obrigatória");
             }
-            if (produtos.Codigo < 1)
+            if (produtos.Codigo == string.Empty)
             {
                 throw new ApplicationException("O codigo é obrigatório");
             }
@@ -40,7 +40,7 @@ namespace RestauranteServidor.BLL
         public void AlterarProdutos(Model.ProdutosModel produtos)
         {
             DAL.ProdutosDAL produtosDAL = new DAL.ProdutosDAL();
-            if (produtos.Codigo >= 1)
+            if (produtos.Codigo != string.Empty)
             {
                 produtosDAL.AlterarProdutos(produtos);
             }
@@ -53,7 +53,7 @@ namespace RestauranteServidor.BLL
 
         public void ExcluirProdutos(Model.ProdutosModel produtos)
         {
-            if (produtos.Codigo >= 1)
+            if (produtos.Codigo != string.Empty)
             {
                 DAL.ProdutosDAL produtosDAL = new DAL.ProdutosDAL();
                 produtosDAL.ExcluirProdutos(produtos);

@@ -288,6 +288,7 @@
             this.txtcodbarras.Name = "txtcodbarras";
             this.txtcodbarras.Size = new System.Drawing.Size(138, 20);
             this.txtcodbarras.TabIndex = 5;
+            this.txtcodbarras.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcodbarras_KeyPress);
             // 
             // label5
             // 
@@ -350,7 +351,7 @@
             // 
             this.txtcodProduto.BackColor = System.Drawing.SystemColors.Info;
             this.txtcodProduto.Location = new System.Drawing.Point(361, 37);
-            this.txtcodProduto.MaxLength = 80;
+            this.txtcodProduto.MaxLength = 10;
             this.txtcodProduto.Name = "txtcodProduto";
             this.txtcodProduto.Size = new System.Drawing.Size(73, 20);
             this.txtcodProduto.TabIndex = 2;

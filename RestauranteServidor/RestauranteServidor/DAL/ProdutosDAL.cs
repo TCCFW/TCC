@@ -126,7 +126,7 @@ namespace RestauranteServidor.DAL
                 dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
                 while (dr.Read())
                 {
-                    produtos.Codigo = dr.GetInt32(0);
+                    produtos.Codigo = dr.GetString(0);
                     produtos.Descricao = dr.GetString(1);
                     produtos.Fornecedor = dr.GetInt32(2);
                     produtos.Estoque = dr.GetInt32(3);

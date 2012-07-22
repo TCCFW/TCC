@@ -66,24 +66,31 @@ namespace RestauranteServidor.View
         public void RecebeUltimoProduto(int codigo)
         {
             DAL.ProdutosDAL produtos = new DAL.ProdutosDAL();
-            txtcodProduto.Text = produtos.getProdutos(codigo).Codigo.ToString();
-            txtProduto.Text = produtos.getProdutos(codigo).Descricao;
-            txtcodigofornecedor.Text = produtos.getProdutos(codigo).Fornecedor.ToString();
-            txtcodsubgrupo.Text = produtos.getProdutos(codigo).Cod_Subgrupo.ToString();
-            txtestoque.Text = produtos.getProdutos(codigo).Estoque.ToString();
-            txtcodbarras.Text = produtos.getProdutos(codigo).Cod_barras;
-            txtpreco.Text = produtos.getProdutos(codigo).Preco.ToString();
-            txtsubgrupo.Text = produtos.getProdutos(codigo).Desc_Subgrupo;
-            txtfornecedores.Text = produtos.getProdutos(codigo).Razao;
-            if (produtos.getProdutos(codigo).Bloqueado == "N")
+            if (txtcodProduto.Text != string.Empty)
             {
-                rbnao.Checked = true;
-                rbsim.Checked = false;
+                txtcodProduto.Text = produtos.getProdutos(codigo).Codigo.ToString();
+                txtProduto.Text = produtos.getProdutos(codigo).Descricao;
+                txtcodigofornecedor.Text = produtos.getProdutos(codigo).Fornecedor.ToString();
+                txtcodsubgrupo.Text = produtos.getProdutos(codigo).Cod_Subgrupo.ToString();
+                txtestoque.Text = produtos.getProdutos(codigo).Estoque.ToString();
+                txtcodbarras.Text = produtos.getProdutos(codigo).Cod_barras;
+                txtpreco.Text = produtos.getProdutos(codigo).Preco.ToString();
+                txtsubgrupo.Text = produtos.getProdutos(codigo).Desc_Subgrupo;
+                txtfornecedores.Text = produtos.getProdutos(codigo).Razao;
+                if (produtos.getProdutos(codigo).Bloqueado == "N")
+                {
+                    rbnao.Checked = true;
+                    rbsim.Checked = false;
+                }
+                else
+                {
+                    rbnao.Checked = false;
+                    rbsim.Checked = true;
+                }
             }
             else
             {
-                rbnao.Checked = false;
-                rbsim.Checked = true;
+                MessageBox.Show("Não existe registro para ser exibido","Aviso",MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -93,12 +100,26 @@ namespace RestauranteServidor.View
             Model.ProdutosModel produtosModel = new Model.ProdutosModel();
 
             produtosModel.Cod_barras = txtcodbarras.Text;
-            produtosModel.Cod_Subgrupo = Convert.ToInt32(txtcodsubgrupo.Text);
-            produtosModel.Codigo = Convert.ToInt32(txtcodProduto.Text);
+            if (txtcodsubgrupo.Text != string.Empty)
+            {
+                produtosModel.Cod_Subgrupo = Convert.ToInt32(txtcodsubgrupo.Text);
+            }
+            else
+            {
+                MessageBox.Show("Informe o subgrupo antes de salvar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            produtosModel.Codigo = txtcodProduto.Text;
             produtosModel.Desc_Subgrupo = txtsubgrupo.Text;
             produtosModel.Descricao = txtProduto.Text;
             produtosModel.Estoque = Convert.ToInt32(txtestoque.Text);
-            produtosModel.Fornecedor = Convert.ToInt32(txtcodigofornecedor.Text);
+            if (txtcodigofornecedor.Text != string.Empty)
+            {
+                produtosModel.Fornecedor = Convert.ToInt32(txtcodigofornecedor.Text);
+            }
+            else
+            {
+                MessageBox.Show("Informe o fornecedor antes de salvar","Aviso",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
             produtosModel.Preco = Convert.ToDecimal(txtpreco.Text);
             produtosModel.Razao = txtfornecedores.Text;
             if ((rbnao.Checked == false) && (rbsim.Checked == true))
@@ -117,7 +138,7 @@ namespace RestauranteServidor.View
                 }
                 else
                 {
-                    produtosModel.Codigo = Convert.ToInt32(txtcodProduto.Text);
+                    produtosModel.Codigo = txtcodProduto.Text;
                     produtosBLL.AlterarProdutos(produtosModel);
                 }
 
@@ -328,7 +349,7 @@ namespace RestauranteServidor.View
             }
             else
             {
-                produtosModel.Codigo = Convert.ToInt32(txtcodProduto.Text);
+                produtosModel.Codigo = txtcodProduto.Text;
                 if (MessageBox.Show("Tem certeza que deseja excluir o produto?", "AVISO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     produtosBLL.ExcluirProdutos(produtosModel);
@@ -388,7 +409,10 @@ namespace RestauranteServidor.View
             {
                 txtcodigofornecedor.Text = txtcodigofornecedor.Text.Replace("'", "");
             }
-            txtfornecedores.Text = fornecedor.getFornecedores(Convert.ToInt32(txtcodigofornecedor.Text)).Razao;
+            if (txtcodigofornecedor.Text != string.Empty)
+            {
+                txtfornecedores.Text = fornecedor.getFornecedores(Convert.ToInt32(txtcodigofornecedor.Text)).Razao;
+            }
         }
 
         private void txtcodsubgrupo_KeyDown(object sender, KeyEventArgs e)
@@ -410,7 +434,10 @@ namespace RestauranteServidor.View
             {
                 txtcodsubgrupo.Text = txtcodsubgrupo.Text.Replace("'", "");
             }
-            txtsubgrupo.Text = subgrupos.getSubGruposPorCodigo(Convert.ToInt32(txtcodsubgrupo.Text)).Subgrupo;
+            if (txtcodsubgrupo.Text != string.Empty)
+            {
+                txtsubgrupo.Text = subgrupos.getSubGruposPorCodigo(Convert.ToInt32(txtcodsubgrupo.Text)).Subgrupo;
+            }
         }
 
         private void CarregarGridView()
@@ -533,6 +560,11 @@ namespace RestauranteServidor.View
         }
 
         private void txtcodProduto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
+        }
+
+        private void txtcodbarras_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
             {

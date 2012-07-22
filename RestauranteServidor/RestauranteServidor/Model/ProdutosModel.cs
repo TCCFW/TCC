@@ -9,9 +9,9 @@ namespace RestauranteServidor.Model
     {
         public ProdutosModel(){}
 
-        private int _codigo;
+        private string _codigo;
 
-        public int Codigo
+        public string Codigo
         {
             get { return _codigo; }
             set { _codigo = value; }
