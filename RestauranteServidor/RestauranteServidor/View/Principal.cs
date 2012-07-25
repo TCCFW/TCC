@@ -72,5 +72,11 @@ namespace RestauranteServidor
             Relatorios.Fornecedores.FiltroRelFornecedores fornecedores = new Relatorios.Fornecedores.FiltroRelFornecedores();
             fornecedores.ShowDialog();
         }
+
+        private void relatorioDeProdutosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Relatorios.Produtos.FiltroRelProdutos produtos = new Relatorios.Produtos.FiltroRelProdutos();
+            produtos.ShowDialog();
+        }
     }
 }

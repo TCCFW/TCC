@@ -33,3 +33,4 @@ C:\Repositorio TCC\Servidor Desktop\RestauranteServidor\RestauranteServidor\obj\
 C:\Repositorio TCC\Servidor Desktop\RestauranteServidor\RestauranteServidor\obj\x86\Debug\RestauranteServidor.Relatorios.Cidades.frmRelCidades.resources
 C:\Repositorio TCC\Servidor Desktop\RestauranteServidor\RestauranteServidor\obj\x86\Debug\RestauranteServidor.Relatorios.Fornecedores.FiltroRelFornecedores.resources
 C:\Repositorio TCC\Servidor Desktop\RestauranteServidor\RestauranteServidor\obj\x86\Debug\RestauranteServidor.Relatorios.Fornecedores.frmRelFornecedores.resources
+C:\Repositorio TCC\Servidor Desktop\RestauranteServidor\RestauranteServidor\obj\x86\Debug\RestauranteServidor.Relatorios.Produtos.FiltroRelProdutos.resources

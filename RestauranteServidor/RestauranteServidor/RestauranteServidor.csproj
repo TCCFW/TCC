@@ -138,6 +138,12 @@
       <DependentUpon>rptRelFornecedores.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Relatorios\Produtos\FiltroRelProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\Produtos\FiltroRelProdutos.Designer.cs">
+      <DependentUpon>FiltroRelProdutos.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\CadCidades.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,6 +201,9 @@
     <EmbeddedResource Include="Relatorios\Fornecedores\rptRelFornecedores.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptRelFornecedores.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\Produtos\FiltroRelProdutos.resx">
+      <DependentUpon>FiltroRelProdutos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\CadCidades.resx">
       <DependentUpon>CadCidades.cs</DependentUpon>
@@ -285,9 +294,7 @@
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Relatorios\Produtos\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
