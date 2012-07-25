@@ -272,6 +272,69 @@ namespace RestauranteServidor.DAL
             }
         }
 
+        public DataSet dtRelFornecedores(Model.FornecedorModel fornecedor)
+        {
+            try
+            {
+                conn = new SqlConnection(Strconexao);
+                Relatorios.Cidades.dsCidades oDataset = new Relatorios.Cidades.dsCidades();
+                string consulta = "SELECT fornecedor.codigo, fornecedor.razao, fornecedor.cnpj, cidades.cidade, cidades.uf from fornecedor join cidades on fornecedor.cidade = cidades.codigo";
+
+                if (fornecedor.Codigo >0)
+                {
+                    consulta = "SELECT fornecedor.codigo, fornecedor.razao, fornecedor.cnpj, cidades.cidade, cidades.uf from fornecedor join cidades on fornecedor.cidade = cidades.codigo where fornecedor.codigo="+fornecedor.Codigo;
+
+                    if (fornecedor.Bloqueado == "S")
+                    {
+                        consulta = "SELECT fornecedor.codigo, fornecedor.razao, fornecedor.cnpj, cidades.cidade, cidades.uf from fornecedor join cidades on fornecedor.cidade = cidades.codigo where fornecedor.codigo=" + fornecedor.Codigo + " and fornecedor.bloqueado='S'";
+                    }
+                    if (fornecedor.Bloqueado == "N")
+                    {
+                        consulta = "SELECT fornecedor.codigo, fornecedor.razao, fornecedor.cnpj, cidades.cidade, cidades.uf from fornecedor join cidades on fornecedor.cidade = cidades.codigo where fornecedor.codigo=" + fornecedor.Codigo + " and fornecedor.bloqueado='N'";
+                    }
+                    if (fornecedor.Bloqueado == "T")
+                    {
+                        consulta = "SELECT fornecedor.codigo, fornecedor.razao, fornecedor.cnpj, cidades.cidade, cidades.uf from fornecedor join cidades on fornecedor.cidade = cidades.codigo where fornecedor.codigo=" + fornecedor.Codigo;
+                    }
+                }
+
+                if (fornecedor.Codigo == 0)
+                {
+                    consulta = "SELECT fornecedor.codigo, fornecedor.razao, fornecedor.cnpj, cidades.cidade, cidades.uf from fornecedor join cidades on fornecedor.cidade = cidades.codigo";
+
+                    if (fornecedor.Bloqueado == "S")
+                    {
+                        consulta = "SELECT fornecedor.codigo, fornecedor.razao, fornecedor.cnpj, cidades.cidade, cidades.uf from fornecedor join cidades on fornecedor.cidade = cidades.codigo where fornecedor.bloqueado='S'";
+                    }
+                    if (fornecedor.Bloqueado == "N")
+                    {
+                        consulta = "SELECT fornecedor.codigo, fornecedor.razao, fornecedor.cnpj, cidades.cidade, cidades.uf from fornecedor join cidades on fornecedor.cidade = cidades.codigo where fornecedor.bloqueado='N'";
+                    }
+                    if (fornecedor.Bloqueado == "T")
+                    {
+                        consulta = "SELECT fornecedor.codigo, fornecedor.razao, fornecedor.cnpj, cidades.cidade, cidades.uf from fornecedor join cidades on fornecedor.cidade = cidades.codigo";
+                    }
+                }
+
+                conn.Open();
+                SqlDataAdapter Oda = new SqlDataAdapter(consulta, conn);
+                Oda.Fill(oDataset, "fornecedores");
+                return oDataset;
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("Erro ao gerar relatorio de fornecedores" + ex.Message);
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+
+        }
+
         public DataTable getFornecedores(String ordem, String bloqueado, string cidade,string parametro)
         {
             conn = new SqlConnection(Strconexao);

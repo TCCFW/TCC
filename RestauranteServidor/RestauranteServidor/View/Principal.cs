@@ -60,5 +60,17 @@ namespace RestauranteServidor
             View.CadProdutos produtos = new View.CadProdutos();
             produtos.ShowDialog();
         }
+
+        private void relatorioCidadesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Relatorios.Cidades.FiltroRelCidades relatorio = new Relatorios.Cidades.FiltroRelCidades();
+            relatorio.Show();
+        }
+
+        private void relatórioDeFornecedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Relatorios.Fornecedores.FiltroRelFornecedores fornecedores = new Relatorios.Fornecedores.FiltroRelFornecedores();
+            fornecedores.ShowDialog();
+        }
     }
 }

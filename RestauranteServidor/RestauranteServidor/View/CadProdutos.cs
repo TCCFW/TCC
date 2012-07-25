@@ -111,7 +111,10 @@ namespace RestauranteServidor.View
             produtosModel.Codigo = txtcodProduto.Text;
             produtosModel.Desc_Subgrupo = txtsubgrupo.Text;
             produtosModel.Descricao = txtProduto.Text;
-            produtosModel.Estoque = Convert.ToInt32(txtestoque.Text);
+            if (txtestoque.Text != string.Empty)
+            {
+                produtosModel.Estoque = Convert.ToInt32(txtestoque.Text);
+            }
             if (txtcodigofornecedor.Text != string.Empty)
             {
                 produtosModel.Fornecedor = Convert.ToInt32(txtcodigofornecedor.Text);
@@ -120,7 +123,10 @@ namespace RestauranteServidor.View
             {
                 MessageBox.Show("Informe o fornecedor antes de salvar","Aviso",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
-            produtosModel.Preco = Convert.ToDecimal(txtpreco.Text);
+            if (txtpreco.Text != string.Empty)
+            {
+                produtosModel.Preco = Convert.ToDecimal(txtpreco.Text);
+            }
             produtosModel.Razao = txtfornecedores.Text;
             if ((rbnao.Checked == false) && (rbsim.Checked == true))
             {

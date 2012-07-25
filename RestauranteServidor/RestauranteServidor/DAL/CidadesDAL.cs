@@ -132,6 +132,67 @@ namespace RestauranteServidor.DAL
             }
         }
 
+        public DataSet dtRelCidades(Model.CidadeModel cidades)
+        {
+            try
+            {
+                conn = new SqlConnection(Strconexao);
+                Relatorios.Cidades.dsCidades oDataset = new Relatorios.Cidades.dsCidades();
+                string consulta = "SELECT codigo, cidade, uf FROM cidades";
+                if (cidades.Codigo > 0)
+                {
+                    consulta = "SELECT codigo, cidade, uf FROM cidades where codigo=" + cidades.Codigo;
+
+                    if (cidades.Bloqueado == "S")
+                    {
+                        consulta = "SELECT codigo, cidade, uf FROM cidades where codigo=" + cidades.Codigo + " and bloqueado='S'";
+                    }
+                    if (cidades.Bloqueado == "N")
+                    {
+                        consulta = "SELECT codigo, cidade, uf FROM cidades where codigo=" + cidades.Codigo + " and bloqueado='N'";
+                    }
+                    if (cidades.Bloqueado == "T")
+                    {
+                        consulta = "SELECT codigo, cidade, uf FROM cidades where codigo=" + cidades.Codigo;
+                    }
+                }
+
+                if (cidades.Codigo == 0)
+                {
+                    consulta = "SELECT codigo, cidade, uf FROM cidades";
+
+                    if (cidades.Bloqueado == "S")
+                    {
+                        consulta = "SELECT codigo, cidade, uf FROM cidades where bloqueado='S'";
+                    }
+                    if (cidades.Bloqueado == "N")
+                    {
+                        consulta = "SELECT codigo, cidade, uf FROM cidades where bloqueado='N'";
+                    }
+                    if (cidades.Bloqueado == "T")
+                    {
+                        consulta = "SELECT codigo, cidade, uf FROM cidades";
+                    }
+                }
+                conn.Open();
+                SqlDataAdapter Oda = new SqlDataAdapter(consulta, conn);
+                Oda.Fill(oDataset, "cidades");
+                return oDataset;
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("Erro ao gerar relatorio de cidades" + ex.Message);
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+
+        }
+
         public Model.CidadeModel getCidades(int codigo)
         {
             conn = new SqlConnection(Strconexao);

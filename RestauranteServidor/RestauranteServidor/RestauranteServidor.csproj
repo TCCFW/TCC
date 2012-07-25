@@ -10,8 +10,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RestauranteServidor</RootNamespace>
     <AssemblyName>RestauranteServidor</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
@@ -52,11 +53,18 @@
     <ApplicationIcon>Be Icon World.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
@@ -80,6 +88,56 @@
     <Compile Include="Model\GrupoModel.cs" />
     <Compile Include="Model\ProdutosModel.cs" />
     <Compile Include="Model\SubGrupoModel.cs" />
+    <Compile Include="Relatorios\Cidades\dsCidades.cs">
+      <DependentUpon>dsCidades.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Relatorios\Cidades\dsCidades.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCidades.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\Cidades\FiltroRelCidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\Cidades\FiltroRelCidades.Designer.cs">
+      <DependentUpon>FiltroRelCidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\Cidades\frmRelCidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\Cidades\frmRelCidades.Designer.cs">
+      <DependentUpon>frmRelCidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\Cidades\rptCidades.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCidades.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Relatorios\Fornecedores\dsFornecedores.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsFornecedores.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\Fornecedores\FiltroRelFornecedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\Fornecedores\FiltroRelFornecedores.Designer.cs">
+      <DependentUpon>FiltroRelFornecedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\Fornecedores\frmRelFornecedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\Fornecedores\frmRelFornecedores.Designer.cs">
+      <DependentUpon>frmRelFornecedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\Fornecedores\rptRelFornecedores.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptRelFornecedores.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="View\CadCidades.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +176,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Relatorios\Cidades\FiltroRelCidades.resx">
+      <DependentUpon>FiltroRelCidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\Cidades\frmRelCidades.resx">
+      <DependentUpon>frmRelCidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\Cidades\rptCidades.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCidades.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\Fornecedores\FiltroRelFornecedores.resx">
+      <DependentUpon>FiltroRelFornecedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\Fornecedores\frmRelFornecedores.resx">
+      <DependentUpon>frmRelFornecedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\Fornecedores\rptRelFornecedores.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptRelFornecedores.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\CadCidades.resx">
       <DependentUpon>CadCidades.cs</DependentUpon>
     </EmbeddedResource>
@@ -144,7 +222,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -154,6 +234,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Relatorios\Cidades\dsCidades.xsc">
+      <DependentUpon>dsCidades.xsd</DependentUpon>
+    </None>
+    <None Include="Relatorios\Cidades\dsCidades.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCidades.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Relatorios\Cidades\dsCidades.xss">
+      <DependentUpon>dsCidades.xsd</DependentUpon>
+    </None>
+    <None Include="Relatorios\Fornecedores\dsFornecedores.xsc">
+      <DependentUpon>dsFornecedores.xsd</DependentUpon>
+    </None>
+    <None Include="Relatorios\Fornecedores\dsFornecedores.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsFornecedores.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Relatorios\Fornecedores\dsFornecedores.xss">
+      <DependentUpon>dsFornecedores.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Be Icon World.ico" />
@@ -179,6 +281,12 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Relatorios\Produtos\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

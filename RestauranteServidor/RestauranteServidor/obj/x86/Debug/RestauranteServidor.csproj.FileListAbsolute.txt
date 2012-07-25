@@ -26,3 +26,10 @@ C:\Repositorio TCC\Servidor Desktop\RestauranteServidor\RestauranteServidor\obj\
 C:\Repositorio TCC\Servidor Desktop\RestauranteServidor\RestauranteServidor\obj\x86\Debug\RestauranteServidor.Properties.Resources.resources
 C:\Repositorio TCC\Servidor Desktop\RestauranteServidor\RestauranteServidor\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Repositorio TCC\Servidor Desktop\RestauranteServidor\RestauranteServidor\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Repositorio TCC\Servidor Desktop\RestauranteServidor\RestauranteServidor\bin\Debug\RestauranteServidor.exe.config
+C:\Repositorio TCC\Servidor Desktop\RestauranteServidor\RestauranteServidor\obj\x86\Debug\ResGen.read.1.tlog
+C:\Repositorio TCC\Servidor Desktop\RestauranteServidor\RestauranteServidor\obj\x86\Debug\ResGen.write.1.tlog
+C:\Repositorio TCC\Servidor Desktop\RestauranteServidor\RestauranteServidor\obj\x86\Debug\RestauranteServidor.Relatorios.Cidades.FiltroRelCidades.resources
+C:\Repositorio TCC\Servidor Desktop\RestauranteServidor\RestauranteServidor\obj\x86\Debug\RestauranteServidor.Relatorios.Cidades.frmRelCidades.resources
+C:\Repositorio TCC\Servidor Desktop\RestauranteServidor\RestauranteServidor\obj\x86\Debug\RestauranteServidor.Relatorios.Fornecedores.FiltroRelFornecedores.resources
+C:\Repositorio TCC\Servidor Desktop\RestauranteServidor\RestauranteServidor\obj\x86\Debug\RestauranteServidor.Relatorios.Fornecedores.frmRelFornecedores.resources
