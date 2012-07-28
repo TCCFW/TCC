@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsCidades" targetNamespace="http://tempuri.org/dsCidades.xsd" xmlns:mstns="http://tempuri.org/dsCidades.xsd" xmlns="http://tempuri.org/dsCidades.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="restauranteConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="restauranteConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.RestauranteServidor.Properties.Settings.GlobalReference.Default.restauranteConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsCidades" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsCidades" msprop:Generator_UserDSName="dsCidades">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="cidades" msprop:Generator_TableClassName="cidadesDataTable" msprop:Generator_TableVarName="tablecidades" msprop:Generator_TablePropName="cidades" msprop:Generator_RowDeletingName="cidadesRowDeleting" msprop:Generator_UserTableName="cidades" msprop:Generator_RowChangingName="cidadesRowChanging" msprop:Generator_RowEvHandlerName="cidadesRowChangeEventHandler" msprop:Generator_RowDeletedName="cidadesRowDeleted" msprop:Generator_RowEvArgName="cidadesRowChangeEvent" msprop:Generator_RowChangedName="cidadesRowChanged" msprop:Generator_RowClassName="cidadesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Codigo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCodigo" msprop:Generator_ColumnPropNameInRow="Codigo" msprop:Generator_ColumnPropNameInTable="CodigoColumn" msprop:Generator_UserColumnName="Codigo" type="xs:int" />
+              <xs:element name="Cidade" msprop:Generator_ColumnVarNameInTable="columnCidade" msprop:Generator_ColumnPropNameInRow="Cidade" msprop:Generator_ColumnPropNameInTable="CidadeColumn" msprop:Generator_UserColumnName="Cidade" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UF" msprop:Generator_ColumnVarNameInTable="columnUF" msprop:Generator_ColumnPropNameInRow="UF" msprop:Generator_ColumnPropNameInTable="UFColumn" msprop:Generator_UserColumnName="UF" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:cidades" />
+      <xs:field xpath="mstns:Codigo" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
