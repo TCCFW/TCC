@@ -512,6 +512,10 @@ namespace RestauranteServidor.View
             }
             txtcidadeconsulta.Text = cidades.getCidades(Convert.ToInt32(txtcodcidadeconsulta.Text)).Cidade;
             mskufconsulta.Text = cidades.getCidades(Convert.ToInt32(txtcodcidadeconsulta.Text)).UF;
+            if (txtcidade.Text == string.Empty)
+            {
+                MessageBox.Show("Cidade inexistente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void txtcodcidadeconsulta_KeyDown(object sender, KeyEventArgs e)
@@ -529,6 +533,14 @@ namespace RestauranteServidor.View
         private void chkboxcidadeconsulta_CheckStateChanged(object sender, EventArgs e)
         {
             CarregarGridView();
+        }
+
+        private void txtcodigocidade_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

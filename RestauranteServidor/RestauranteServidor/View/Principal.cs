@@ -78,5 +78,11 @@ namespace RestauranteServidor
             Relatorios.Produtos.FiltroRelProdutos produtos = new Relatorios.Produtos.FiltroRelProdutos();
             produtos.ShowDialog();
         }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            View.CadUsuario usuarios = new View.CadUsuario();
+            usuarios.ShowDialog();
+        }
     }
 }

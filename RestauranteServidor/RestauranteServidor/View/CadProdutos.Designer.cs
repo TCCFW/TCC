@@ -308,6 +308,7 @@
             this.txtcodsubgrupo.Size = new System.Drawing.Size(37, 20);
             this.txtcodsubgrupo.TabIndex = 4;
             this.txtcodsubgrupo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtcodsubgrupo_KeyDown);
+            this.txtcodsubgrupo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcodsubgrupo_KeyPress);
             this.txtcodsubgrupo.Leave += new System.EventHandler(this.txtcodsubgrupo_Leave);
             // 
             // label3
@@ -377,6 +378,7 @@
             this.txtcodigofornecedor.TabIndex = 1;
             this.txtcodigofornecedor.TextChanged += new System.EventHandler(this.txtcodigofornecedor_TextChanged);
             this.txtcodigofornecedor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtcodigofornecedor_KeyDown);
+            this.txtcodigofornecedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcodigofornecedor_KeyPress);
             this.txtcodigofornecedor.Leave += new System.EventHandler(this.txtcodigofornecedor_Leave);
             // 
             // codFornecedor

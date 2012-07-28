@@ -417,6 +417,7 @@
             this.txtcodigocidade.Size = new System.Drawing.Size(37, 20);
             this.txtcodigocidade.TabIndex = 9;
             this.txtcodigocidade.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtcodigocidade_KeyDown);
+            this.txtcodigocidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcodigocidade_KeyPress);
             this.txtcodigocidade.Leave += new System.EventHandler(this.txtcodigocidade_Leave);
             // 
             // label28

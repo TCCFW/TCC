@@ -289,6 +289,7 @@
             this.txtcodgrupo.Size = new System.Drawing.Size(37, 20);
             this.txtcodgrupo.TabIndex = 65;
             this.txtcodgrupo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtcodgrupo_KeyDown);
+            this.txtcodgrupo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcodgrupo_KeyPress);
             this.txtcodgrupo.Leave += new System.EventHandler(this.txtcodgrupo_Leave);
             // 
             // txtcodigo

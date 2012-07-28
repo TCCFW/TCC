@@ -67,15 +67,15 @@ namespace RestauranteServidor.View
             txtcidade.Text = cidades.getCidades(codigo).Cidade.ToString();
             txtcodigocidade.Text = cidades.getCidades(codigo).Codigo.ToString();
             mskuf.Text = cidades.getCidades(codigo).UF;
-            if (cidades.getCidades(codigo).Bloqueado == "N")
-            {
-                rbnao.Checked = true;
-                rbsim.Checked = false;
-            }
-            else
+            if (cidades.getCidades(codigo).Bloqueado == "S")
             {
                 rbnao.Checked = false;
                 rbsim.Checked = true;
+            }
+            else
+            {
+                rbnao.Checked = true;
+                rbsim.Checked = false;
             }
         }
 

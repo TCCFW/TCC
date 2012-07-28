@@ -38,9 +38,10 @@
             this.produtosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.relatorioCidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatórioDeFornecedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.relatorioDeProdutosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.relatorioDeProdutosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,6 +65,7 @@
             this.produtosToolStripMenuItem,
             this.cidadesToolStripMenuItem,
             this.produtosToolStripMenuItem1,
+            this.usuariosToolStripMenuItem,
             this.relatorioCidadesToolStripMenuItem,
             this.relatórioDeFornecedoresToolStripMenuItem,
             this.relatorioDeProdutosToolStripMenuItem});
@@ -121,6 +123,13 @@
             this.relatórioDeFornecedoresToolStripMenuItem.Text = "Relatório de Fornecedores";
             this.relatórioDeFornecedoresToolStripMenuItem.Click += new System.EventHandler(this.relatórioDeFornecedoresToolStripMenuItem_Click);
             // 
+            // relatorioDeProdutosToolStripMenuItem
+            // 
+            this.relatorioDeProdutosToolStripMenuItem.Name = "relatorioDeProdutosToolStripMenuItem";
+            this.relatorioDeProdutosToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.relatorioDeProdutosToolStripMenuItem.Text = "Relatorio de Produtos";
+            this.relatorioDeProdutosToolStripMenuItem.Click += new System.EventHandler(this.relatorioDeProdutosToolStripMenuItem_Click);
+            // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
@@ -140,12 +149,12 @@
             this.label1.Text = "SISTEMA DE CONTROLE DE RESTAURANTE";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // relatorioDeProdutosToolStripMenuItem
+            // usuariosToolStripMenuItem
             // 
-            this.relatorioDeProdutosToolStripMenuItem.Name = "relatorioDeProdutosToolStripMenuItem";
-            this.relatorioDeProdutosToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
-            this.relatorioDeProdutosToolStripMenuItem.Text = "Relatorio de Produtos";
-            this.relatorioDeProdutosToolStripMenuItem.Click += new System.EventHandler(this.relatorioDeProdutosToolStripMenuItem_Click);
+            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.usuariosToolStripMenuItem.Text = "Usuarios";
+            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -181,6 +190,7 @@
         private System.Windows.Forms.ToolStripMenuItem relatorioCidadesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem relatórioDeFornecedoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem relatorioDeProdutosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
     }
 }
 
