@@ -59,6 +59,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Relação de Fornecedores";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmRelFornecedores_Load);
             this.ResumeLayout(false);
 
         }

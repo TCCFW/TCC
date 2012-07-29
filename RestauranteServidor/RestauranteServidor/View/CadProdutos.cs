@@ -297,7 +297,7 @@ namespace RestauranteServidor.View
                 tssair.Enabled = true;
                 tssalvar.Enabled = false;
                 tsCancelar.Enabled = false;
-                if (txtcodProduto.Text != string.Empty)
+                if (txtcodProduto.Text == string.Empty)
                 {
                     RecebeUltimoProduto(Reg_Atual);
                 }
@@ -360,10 +360,9 @@ namespace RestauranteServidor.View
                 {
                     produtosBLL.ExcluirProdutos(produtosModel);
                     MessageBox.Show("Produto excluído com Sucesso", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    RecebeUltimoProduto(0);
                 }
                 tsCancelar.Enabled = false;
-                LimparCampos();
-                RecebeUltimoProduto(Reg_Atual);
             }
         }
 

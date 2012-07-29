@@ -486,7 +486,6 @@
             this.ClientSize = new System.Drawing.Size(813, 436);
             this.Controls.Add(this.tbCidades);
             this.Controls.Add(this.toolStrip1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Location = new System.Drawing.Point(10, 45);
             this.MaximizeBox = false;

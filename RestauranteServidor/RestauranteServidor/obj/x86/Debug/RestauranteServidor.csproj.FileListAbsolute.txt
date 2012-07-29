@@ -35,3 +35,4 @@ C:\Repositorio TCC\Servidor Desktop\RestauranteServidor\RestauranteServidor\obj\
 C:\Repositorio TCC\Servidor Desktop\RestauranteServidor\RestauranteServidor\obj\x86\Debug\RestauranteServidor.Relatorios.Fornecedores.frmRelFornecedores.resources
 C:\Repositorio TCC\Servidor Desktop\RestauranteServidor\RestauranteServidor\obj\x86\Debug\RestauranteServidor.Relatorios.Produtos.FiltroRelProdutos.resources
 C:\Repositorio TCC\Servidor Desktop\RestauranteServidor\RestauranteServidor\obj\x86\Debug\RestauranteServidor.View.CadUsuario.resources
+C:\Repositorio TCC\Servidor Desktop\RestauranteServidor\RestauranteServidor\obj\x86\Debug\RestauranteServidor.View.CadMesas.resources

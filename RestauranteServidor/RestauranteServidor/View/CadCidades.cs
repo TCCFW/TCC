@@ -67,15 +67,15 @@ namespace RestauranteServidor.View
             txtcidade.Text = cidades.getCidades(codigo).Cidade.ToString();
             txtcodigocidade.Text = cidades.getCidades(codigo).Codigo.ToString();
             mskuf.Text = cidades.getCidades(codigo).UF;
-            if (cidades.getCidades(codigo).Bloqueado == "S")
-            {
-                rbnao.Checked = false;
-                rbsim.Checked = true;
-            }
-            else
+            if (cidades.getCidades(codigo).Bloqueado == "N")
             {
                 rbnao.Checked = true;
                 rbsim.Checked = false;
+            }
+            else
+            {
+                rbnao.Checked = false;
+                rbsim.Checked = true;
             }
         }
 
@@ -153,10 +153,12 @@ namespace RestauranteServidor.View
                 {
                     cidadesBLL.ExcluirCidades(cidadesModel);
                     MessageBox.Show("Cidade excluída com Sucesso", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    RecebeUltimaCidade(0);
                 }
-                tsCancelar.Enabled = false;
-                LimparCampos();
-                RecebeUltimaCidade(Reg_Atual);
+                else
+                {
+                    tsCancelar.Enabled = false;
+                }
             }
         }
 
@@ -207,7 +209,7 @@ namespace RestauranteServidor.View
                 tssair.Enabled = true;
                 tssalvar.Enabled = false;
                 tsCancelar.Enabled = false;
-                if (txtcodigocidade.Text != string.Empty)
+                if (txtcodigocidade.Text == string.Empty)
                 {
                     RecebeUltimaCidade(Reg_Atual);
                 }
@@ -300,6 +302,17 @@ namespace RestauranteServidor.View
         private void dtgconsultacidades_DoubleClick(object sender, EventArgs e)
         {
             VisualizarCidades();
+            //Mudar de TabPage
+            this.tbCidades.SelectedTab = tcCadastrar;
+            //Limpar o DataGridView ao mudar de TabPage
+            if (this.dtgconsultacidades.DataSource != null)
+            {
+                this.dtgconsultacidades.DataSource = null;
+            }
+            else
+            {
+                this.dtgconsultacidades.Rows.Clear();
+            }
         }
 
         private void CadCidades_FormClosing(object sender, FormClosingEventArgs e)

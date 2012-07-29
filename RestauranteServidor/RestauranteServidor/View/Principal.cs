@@ -84,5 +84,11 @@ namespace RestauranteServidor
             View.CadUsuario usuarios = new View.CadUsuario();
             usuarios.ShowDialog();
         }
+
+        private void mesasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            View.CadMesas mesas = new View.CadMesas();
+            mesas.ShowDialog();
+        }
     }
 }

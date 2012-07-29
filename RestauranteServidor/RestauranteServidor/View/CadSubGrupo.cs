@@ -191,7 +191,7 @@ namespace RestauranteServidor.View
                 tssair.Enabled = true;
                 tssalvar.Enabled = false;
                 tsCancelar.Enabled = false;
-                if (txtcodigo.Text != string.Empty)
+                if (txtcodigo.Text == string.Empty)
                 {
                     RecebeUltimoSubGrupo(Reg_Atual);
                 }
@@ -214,10 +214,9 @@ namespace RestauranteServidor.View
                 {
                     subgruposBLL.ExcluirSubGrupos(subgruposModel);
                     MessageBox.Show("SubGrupo excluído com Sucesso", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    RecebeUltimoSubGrupo(0);
                 }
                 tsCancelar.Enabled = false;
-                LimparCampos();
-                RecebeUltimoSubGrupo(Reg_Atual);
             }
         }
 

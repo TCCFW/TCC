@@ -15,5 +15,10 @@ namespace RestauranteServidor.Relatorios.Fornecedores
         {
             InitializeComponent();
         }
+
+        private void frmRelFornecedores_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -294,14 +294,13 @@ namespace RestauranteServidor.View
             else
             {
                 usuariosModel.Codigo = Convert.ToInt32(txtcodigousuario.Text);
-                if (MessageBox.Show("Tem certeza que deseja excluir o usuariocodigo " + txtcodigousuario.Text + "?", "AVISO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                if (MessageBox.Show("Tem certeza que deseja excluir o usuario codigo " + txtcodigousuario.Text + "?", "AVISO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     usuariosBLL.ExcluirUsuarios(usuariosModel);
                     MessageBox.Show("Usuario excluído com Sucesso", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    RecebeUltimoUsuario(0);
                 }
                 tsCancelar.Enabled = false;
-                LimparCampos();
-                RecebeUltimoUsuario(Reg_Atual);
             }
         }
 
@@ -352,7 +351,7 @@ namespace RestauranteServidor.View
                 tssair.Enabled = true;
                 tssalvar.Enabled = false;
                 tsCancelar.Enabled = false;
-                if (txtcodigousuario.Text != string.Empty)
+                if (txtcodigousuario.Text == string.Empty)
                 {
                     RecebeUltimoUsuario(Reg_Atual);
                 }

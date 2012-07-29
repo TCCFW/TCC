@@ -9,7 +9,7 @@ namespace RestauranteServidor.DAL
 {
     public class CidadesDAL
     {
-        string Strconexao = @"Server = .\sqlexpress;Database=restaurante; Integrated Security = SSPI;";
+        private string Strconexao = @"Server = .\sqlexpress;Database=restaurante; Integrated Security = SSPI;";
         SqlConnection conn = null;
 
         public void salvarCidades(Model.CidadeModel cidadeModel)

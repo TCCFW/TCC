@@ -207,10 +207,9 @@ namespace RestauranteServidor.View
                 {
                     fornecedorBLL.Excluirfornecedor(fornecedorModel);
                     MessageBox.Show("Fornecedor excluído com Sucesso", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    RecebeUltimoFornecedor(0);
                 }
                 tsCancelar.Enabled = false;
-                LimparCampos();
-                RecebeUltimoFornecedor(Reg_Atual);
             }
         }
 
@@ -262,7 +261,7 @@ namespace RestauranteServidor.View
                 tssair.Enabled = true;
                 tssalvar.Enabled = false;
                 tsCancelar.Enabled = false;
-                if (txtcodigo.Text != string.Empty)
+                if (txtcodigo.Text == string.Empty)
                 {
                     RecebeUltimoFornecedor(Reg_Atual);
                 }

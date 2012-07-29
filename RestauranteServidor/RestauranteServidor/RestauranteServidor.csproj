@@ -76,12 +76,15 @@
     <Compile Include="BLL\Criptografia.cs" />
     <Compile Include="BLL\FornecedorBLL.cs" />
     <Compile Include="BLL\GruposBLL.cs" />
+    <Compile Include="BLL\MesasBLL.cs" />
     <Compile Include="BLL\ProdutosBLL.cs" />
     <Compile Include="BLL\SubGruposBLL.cs" />
     <Compile Include="BLL\UsuariosBLL.cs" />
     <Compile Include="DAL\CidadesDAL.cs" />
     <Compile Include="DAL\FornecedorDAL.cs" />
     <Compile Include="DAL\GruposDAL.cs" />
+    <Compile Include="DAL\MesasDAL.cs" />
+    <Compile Include="DAL\PedidoDAL.cs" />
     <Compile Include="DAL\ProdutosDAL.cs" />
     <Compile Include="DAL\SubGruposDAL.cs" />
     <Compile Include="DAL\UsuarioDAL.cs" />
@@ -89,6 +92,9 @@
     <Compile Include="Model\EnderecoModel.cs" />
     <Compile Include="Model\FornecedorModel.cs" />
     <Compile Include="Model\GrupoModel.cs" />
+    <Compile Include="Model\ItemPedidoModel.cs" />
+    <Compile Include="Model\MesasModel.cs" />
+    <Compile Include="Model\PedidoModel.cs" />
     <Compile Include="Model\ProdutosModel.cs" />
     <Compile Include="Model\SubGrupoModel.cs" />
     <Compile Include="Model\UsuarioModel.cs" />
@@ -151,7 +157,7 @@
     <Compile Include="View\CadCidades.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\CadCidades.Designer.cs">
+    <Compile Include="View\CadCidades.designer.cs">
       <DependentUpon>CadCidades.cs</DependentUpon>
     </Compile>
     <Compile Include="View\CadFornecedor.cs">
@@ -165,6 +171,12 @@
     </Compile>
     <Compile Include="View\CadGrupo.Designer.cs">
       <DependentUpon>CadGrupo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\CadMesas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CadMesas.Designer.cs">
+      <DependentUpon>CadMesas.cs</DependentUpon>
     </Compile>
     <Compile Include="View\CadProdutos.cs">
       <SubType>Form</SubType>
@@ -223,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\CadGrupo.resx">
       <DependentUpon>CadGrupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\CadMesas.resx">
+      <DependentUpon>CadMesas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\CadProdutos.resx">
       <DependentUpon>CadProdutos.cs</DependentUpon>
