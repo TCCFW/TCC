@@ -17,7 +17,7 @@ namespace RestauranteServidor.DAL
             conn = new SqlConnection(Strconexao);
             try
             {
-                SqlCommand cmd = new SqlCommand("insert into usuarios(nome, endereco, numero, bairro, cidade, telefone, celular, usuario, senha, cep, email, categoria, bloqueado)values(@nome, @endereco, @numero, @bairro, @cidade, @telefone, @celular, @usuario, @senha, @cep, @email, @categoria, @bloqueado)", conn);
+                SqlCommand cmd = new SqlCommand("insert into usuarios(nome, endereco, numero, bairro, cidade, telefone, celular, usuario, senha, cep, email, categoria, bloqueado, comissao)values(@nome, @endereco, @numero, @bairro, @cidade, @telefone, @celular, @usuario, @senha, @cep, @email, @categoria, @bloqueado,@comissao)", conn);
 
                 cmd.Parameters.AddWithValue("@nome", usuarioModel.Nome);
                 cmd.Parameters.AddWithValue("@endereco",usuarioModel.Endereco.Rua);
@@ -32,6 +32,7 @@ namespace RestauranteServidor.DAL
                 cmd.Parameters.AddWithValue("@email",usuarioModel.Email);
                 cmd.Parameters.AddWithValue("@categoria", usuarioModel.Categoria);
                 cmd.Parameters.AddWithValue("@bloqueado", usuarioModel.Bloqueado);
+                cmd.Parameters.AddWithValue("@comissao",usuarioModel.Comissao);
                 conn.Open();
                 cmd.ExecuteNonQuery();
 
@@ -79,7 +80,7 @@ namespace RestauranteServidor.DAL
             conn = new SqlConnection(Strconexao);
             try
             {
-                SqlCommand cmd = new SqlCommand("update usuarios set nome=@nome, endereco=@endereco, numero=@numero, bairro=@bairro, cidade=@cidade, telefone=@telefone, celular=@celular, usuario=@usuario, cep=@cep, email=@email, categoria=@categoria, bloqueado=@bloqueado where codigo=@codigo", conn);
+                SqlCommand cmd = new SqlCommand("update usuarios set nome=@nome, endereco=@endereco, numero=@numero, bairro=@bairro, cidade=@cidade, telefone=@telefone, celular=@celular, usuario=@usuario, cep=@cep, email=@email, categoria=@categoria, bloqueado=@bloqueado, comissao=@comissao where codigo=@codigo", conn);
                 cmd.Parameters.AddWithValue("@codigo", usuarioModel.Codigo);
                 cmd.Parameters.AddWithValue("@nome", usuarioModel.Nome);
                 cmd.Parameters.AddWithValue("@endereco", usuarioModel.Endereco.Rua);
@@ -94,6 +95,7 @@ namespace RestauranteServidor.DAL
                 cmd.Parameters.AddWithValue("@email", usuarioModel.Email);
                 cmd.Parameters.AddWithValue("@categoria", usuarioModel.Categoria);
                 cmd.Parameters.AddWithValue("@bloqueado", usuarioModel.Bloqueado);
+                cmd.Parameters.AddWithValue("@comissao",usuarioModel.Comissao);
 
                 conn.Open();
                 cmd.ExecuteNonQuery();
@@ -190,8 +192,9 @@ namespace RestauranteServidor.DAL
                     usuarios.Email = dr.GetString(11);
                     usuarios.Categoria = dr.GetString(12);
                     usuarios.Bloqueado = dr.GetString(13);
-                    usuarios.Endereco.Cidade.Cidade = dr.GetString(14);
-                    usuarios.Endereco.Cidade.UF = dr.GetString(15);
+                    usuarios.Comissao = dr.GetInt32(14);
+                    usuarios.Endereco.Cidade.Cidade = dr.GetString(15);
+                    usuarios.Endereco.Cidade.UF = dr.GetString(16);
                 }
                 return usuarios;
             }

@@ -26,6 +26,7 @@ namespace RestauranteServidor.Model
             get { return _codigo; }
             set { _codigo = value; }
         }
+
         private string _cidade;
 
         public string Cidade
@@ -33,6 +34,7 @@ namespace RestauranteServidor.Model
             get { return _cidade; }
             set { _cidade = value; }
         }
+
         private string _uf;
 
         public string UF

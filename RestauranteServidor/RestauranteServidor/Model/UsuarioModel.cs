@@ -30,13 +30,6 @@ namespace RestauranteServidor.Model
             set { endereco = value; }
         }
 
-        private int _cidade;
-
-        public int Cidade
-        {
-            get { return _cidade; }
-            set { _cidade = value; }
-        }
         private string _telefone;
 
         public string Telefone
@@ -86,6 +79,14 @@ namespace RestauranteServidor.Model
         {
             get { return _bloqueado; }
             set { _bloqueado = value; }
+        }
+
+        private int? _comissao;
+
+        public int? Comissao
+        {
+            get { return _comissao; }
+            set { _comissao = value; }
         }
     }
 }

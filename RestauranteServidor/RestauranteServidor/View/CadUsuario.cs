@@ -39,7 +39,7 @@ namespace RestauranteServidor.View
             mskcelular.Clear();
             mskcep.Clear();
             msktelefone.Clear();
-            rbGarcom.Checked = true;
+            rbComum.Checked = true;
         }
 
         private void BloquearCampos()
@@ -130,6 +130,36 @@ namespace RestauranteServidor.View
             mskcep.Text = usuarios.getUsuarios(codigo).Endereco.Cep;
             msktelefone.Text = usuarios.getUsuarios(codigo).Telefone;
             mskuf.Text = usuarios.getUsuarios(codigo).Endereco.Cidade.UF;
+            txtcomissao.Text = usuarios.getUsuarios(codigo).Comissao.ToString();
+
+            if (usuarios.getUsuarios(codigo).Categoria == "GA")
+            {
+                rbGarcom.Checked = true; ;
+                rbadministrador.Checked = false;
+                rbintermediario.Checked = false;
+                rbComum.Checked = false;
+            }
+            if (usuarios.getUsuarios(codigo).Categoria == "AD")
+            {
+                rbGarcom.Checked = true; ;
+                rbadministrador.Checked = true;
+                rbintermediario.Checked = false;
+                rbComum.Checked = false;
+            }
+            if (usuarios.getUsuarios(codigo).Categoria == "IN")
+            {
+                rbGarcom.Checked = true; ;
+                rbadministrador.Checked = false;
+                rbintermediario.Checked = true;
+                rbComum.Checked = false;
+            }
+            if (usuarios.getUsuarios(codigo).Categoria == "CO")
+            {
+                rbGarcom.Checked = true; ;
+                rbadministrador.Checked = false;
+                rbintermediario.Checked = false;
+                rbComum.Checked = true;
+            }
 
             if (usuarios.getUsuarios(codigo).Bloqueado == "S")
             {
@@ -168,7 +198,11 @@ namespace RestauranteServidor.View
             tssalvar.Enabled = false;
             tsCancelar.Enabled = false;
             txtcidade.Focus();
-            RecebeUltimoUsuario(Reg_Atual);
+            RecebeUltimoUsuario(0);
+            if (tseditar.Enabled == false && rbGarcom.Checked == true)
+            {
+                txtcomissao.Enabled = true;
+            }
         }
 
         private void CadUsuario_FormClosing(object sender, FormClosingEventArgs e)
@@ -211,6 +245,10 @@ namespace RestauranteServidor.View
                 RecebeUltimoUsuario(Reg_Atual);
             }
             salvanovo = 0;
+            if (tseditar.Enabled == false && rbGarcom.Checked == true)
+            {
+                txtcomissao.Enabled = true;
+            }
         }
 
         private void salvarUsuarios()
@@ -224,7 +262,7 @@ namespace RestauranteServidor.View
 
             usuariosModel.Endereco.Cidade.Codigo = Convert.ToInt32(txtcodcidade.Text);
             usuariosModel.Celular = mskcelular.Text;
-            usuariosModel.Cidade = Convert.ToInt32(txtcodcidade.Text);
+            usuariosModel.Endereco.Cidade.Codigo = Convert.ToInt32(txtcodcidade.Text);
             usuariosModel.Email = txtemail.Text;
             usuariosModel.Nome = txtnome.Text;
             usuariosModel.Telefone = msktelefone.Text;
@@ -233,7 +271,7 @@ namespace RestauranteServidor.View
             usuariosModel.Endereco.Bairro = txtbairro.Text;
             usuariosModel.Endereco.Rua = txtendereco.Text;
             usuariosModel.Endereco.Cep = mskcep.Text;
-
+            usuariosModel.Comissao = 0;
             if ((rbnao.Checked == false) && (rbsim.Checked == true))
             {
                 usuariosModel.Bloqueado = "S";
@@ -246,6 +284,7 @@ namespace RestauranteServidor.View
             if ((rbadministrador.Checked == false) && (rbintermediario.Checked == false) && (rbComum.Checked == false) && (rbGarcom.Checked == true))
             {
                 usuariosModel.Categoria = "GA";
+                usuariosModel.Comissao = Convert.ToInt32(txtcomissao.Text);
             }
             if ((rbadministrador.Checked == true) && (rbintermediario.Checked == false) && (rbComum.Checked == false) && (rbGarcom.Checked == false))
             {
@@ -302,6 +341,10 @@ namespace RestauranteServidor.View
                 }
                 tsCancelar.Enabled = false;
             }
+            if (tseditar.Enabled == false && rbGarcom.Checked == true)
+            {
+                txtcomissao.Enabled = true;
+            }
         }
 
         private void tsadicionar_Click(object sender, EventArgs e)
@@ -322,6 +365,10 @@ namespace RestauranteServidor.View
             tsCancelar.Enabled = true;
             tbUsuarios.SelectedTab = tcCadastrar;
             DesbloquearCampos();
+            if (tseditar.Enabled == false && rbGarcom.Checked == true)
+            {
+                txtcomissao.Enabled = true;
+            }
         }
 
         private void tseditar_Click(object sender, EventArgs e)
@@ -338,6 +385,10 @@ namespace RestauranteServidor.View
             tsCancelar.Enabled = true;
             DesbloquearCamposSemSenha();
             Modificar = true;
+            if (tseditar.Enabled == false && rbGarcom.Checked == true)
+            {
+                txtcomissao.Enabled = true;
+            }
         }
 
         private void tsCancelar_Click(object sender, EventArgs e)
@@ -355,7 +406,15 @@ namespace RestauranteServidor.View
                 {
                     RecebeUltimoUsuario(Reg_Atual);
                 }
+                else
+                {
+                    RecebeUltimoUsuario(0);
+                }
                 salvanovo = 0;
+                if (tseditar.Enabled == false && rbGarcom.Checked == true)
+                {
+                    txtcomissao.Enabled = true;
+                }
             }
         }
 
@@ -414,6 +473,7 @@ namespace RestauranteServidor.View
             txtconfsenha.Text = dtgconsultausuarios.CurrentRow.Cells[9].Value.ToString();
             mskcep.Text = dtgconsultausuarios.CurrentRow.Cells[10].Value.ToString();
             txtemail.Text = dtgconsultausuarios.CurrentRow.Cells[11].Value.ToString();
+            
             if (dtgconsultausuarios.CurrentRow.Cells[12].Value.ToString()=="GA")
             {
                 rbGarcom.Checked = true;
@@ -430,8 +490,9 @@ namespace RestauranteServidor.View
             {
                 rbintermediario.Checked = true;
             }
-            txtcidade.Text = dtgconsultausuarios.CurrentRow.Cells[14].Value.ToString();
-            mskuf.Text = dtgconsultausuarios.CurrentRow.Cells[15].Value.ToString();
+            txtcomissao.Text = dtgconsultausuarios.CurrentRow.Cells[14].Value.ToString();
+            txtcidade.Text = dtgconsultausuarios.CurrentRow.Cells[15].Value.ToString();
+            mskuf.Text = dtgconsultausuarios.CurrentRow.Cells[16].Value.ToString();
 
             if (dtgconsultausuarios.CurrentRow.Cells[13].Value.ToString() == "S")
             {
@@ -512,6 +573,26 @@ namespace RestauranteServidor.View
             if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
             {
                 e.Handled = true;
+            }
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void rbGarcom_CheckedChanged(object sender, EventArgs e)
+        {
+            if ((rbGarcom.Checked == true)&&(tseditar.Enabled == false))
+            {
+                txtcomissao.Enabled = true;
+            }
+            else
+            {
+                txtcomissao.Enabled = false;
             }
         }
     }

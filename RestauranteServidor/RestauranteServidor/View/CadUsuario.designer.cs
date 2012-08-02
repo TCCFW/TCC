@@ -43,6 +43,8 @@
             this.tssair = new System.Windows.Forms.ToolStripButton();
             this.tbUsuarios = new System.Windows.Forms.TabControl();
             this.tcCadastrar = new System.Windows.Forms.TabPage();
+            this.txtcomissao = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.txtconfsenha = new System.Windows.Forms.TextBox();
             this.txtbairro = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -232,6 +234,8 @@
             // tcCadastrar
             // 
             this.tcCadastrar.BackColor = System.Drawing.SystemColors.Control;
+            this.tcCadastrar.Controls.Add(this.txtcomissao);
+            this.tcCadastrar.Controls.Add(this.label14);
             this.tcCadastrar.Controls.Add(this.txtconfsenha);
             this.tcCadastrar.Controls.Add(this.txtbairro);
             this.tcCadastrar.Controls.Add(this.groupBox3);
@@ -271,6 +275,26 @@
             this.tcCadastrar.TabIndex = 0;
             this.tcCadastrar.Text = "Cadastrar";
             // 
+            // txtcomissao
+            // 
+            this.txtcomissao.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtcomissao.Enabled = false;
+            this.txtcomissao.Location = new System.Drawing.Point(529, 260);
+            this.txtcomissao.MaxLength = 60;
+            this.txtcomissao.Name = "txtcomissao";
+            this.txtcomissao.Size = new System.Drawing.Size(60, 20);
+            this.txtcomissao.TabIndex = 95;
+            this.txtcomissao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(526, 242);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(63, 13);
+            this.label14.TabIndex = 96;
+            this.label14.Text = "% Comissão";
+            // 
             // txtconfsenha
             // 
             this.txtconfsenha.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -307,22 +331,23 @@
             // rbGarcom
             // 
             this.rbGarcom.AutoSize = true;
-            this.rbGarcom.Checked = true;
             this.rbGarcom.Location = new System.Drawing.Point(10, 88);
             this.rbGarcom.Name = "rbGarcom";
             this.rbGarcom.Size = new System.Drawing.Size(62, 17);
             this.rbGarcom.TabIndex = 13;
-            this.rbGarcom.TabStop = true;
             this.rbGarcom.Text = "Garçom";
             this.rbGarcom.UseVisualStyleBackColor = true;
+            this.rbGarcom.CheckedChanged += new System.EventHandler(this.rbGarcom_CheckedChanged);
             // 
             // rbComum
             // 
             this.rbComum.AutoSize = true;
+            this.rbComum.Checked = true;
             this.rbComum.Location = new System.Drawing.Point(10, 65);
             this.rbComum.Name = "rbComum";
             this.rbComum.Size = new System.Drawing.Size(60, 17);
             this.rbComum.TabIndex = 16;
+            this.rbComum.TabStop = true;
             this.rbComum.Text = "Comum";
             this.rbComum.UseVisualStyleBackColor = true;
             // 
@@ -912,5 +937,7 @@
         private System.Windows.Forms.TextBox txtconfsenha;
         private System.Windows.Forms.RadioButton rbGarcom;
         private System.Windows.Forms.Label Aviso;
+        private System.Windows.Forms.TextBox txtcomissao;
+        private System.Windows.Forms.Label label14;
     }
 }

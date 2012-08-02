@@ -90,5 +90,11 @@ namespace RestauranteServidor
             View.CadMesas mesas = new View.CadMesas();
             mesas.ShowDialog();
         }
+
+        private void pedidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            View.CadPedido pedido = new View.CadPedido();
+            pedido.ShowDialog();
+        }
     }
 }
