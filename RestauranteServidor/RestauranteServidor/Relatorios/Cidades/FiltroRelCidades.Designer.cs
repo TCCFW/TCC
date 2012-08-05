@@ -34,11 +34,11 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.rbTodos = new System.Windows.Forms.RadioButton();
             this.rbnao = new System.Windows.Forms.RadioButton();
             this.rbsim = new System.Windows.Forms.RadioButton();
             this.txtcodigo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.rbTodos = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.chkTodos = new System.Windows.Forms.CheckBox();
             this.groupBox5.SuspendLayout();
@@ -104,6 +104,18 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Bloqueado";
             // 
+            // rbTodos
+            // 
+            this.rbTodos.AutoSize = true;
+            this.rbTodos.Checked = true;
+            this.rbTodos.Location = new System.Drawing.Point(107, 19);
+            this.rbTodos.Name = "rbTodos";
+            this.rbTodos.Size = new System.Drawing.Size(55, 17);
+            this.rbTodos.TabIndex = 16;
+            this.rbTodos.TabStop = true;
+            this.rbTodos.Text = "Todos";
+            this.rbTodos.UseVisualStyleBackColor = true;
+            // 
             // rbnao
             // 
             this.rbnao.AutoSize = true;
@@ -144,18 +156,6 @@
             this.label1.TabIndex = 71;
             this.label1.Text = "Codigo";
             // 
-            // rbTodos
-            // 
-            this.rbTodos.AutoSize = true;
-            this.rbTodos.Checked = true;
-            this.rbTodos.Location = new System.Drawing.Point(107, 19);
-            this.rbTodos.Name = "rbTodos";
-            this.rbTodos.Size = new System.Drawing.Size(55, 17);
-            this.rbTodos.TabIndex = 16;
-            this.rbTodos.TabStop = true;
-            this.rbTodos.Text = "Todos";
-            this.rbTodos.UseVisualStyleBackColor = true;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -191,6 +191,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.gerarRelatorio);
+            this.KeyPreview = true;
             this.Location = new System.Drawing.Point(10, 70);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -198,6 +199,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Gerar Relatorio de Cidades";
             this.Load += new System.EventHandler(this.FiltroRelCidades_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FiltroRelCidades_KeyDown);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.ResumeLayout(false);

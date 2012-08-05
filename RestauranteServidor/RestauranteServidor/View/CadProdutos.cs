@@ -15,6 +15,7 @@ namespace RestauranteServidor.View
         private bool Adicionar = true;
         private int Reg_Atual = 0;
         private int salvanovo = 0;
+        
 
         private void LimparCampos()
         {
@@ -63,11 +64,23 @@ namespace RestauranteServidor.View
             InitializeComponent();
         }
 
+        private int _codigorealproduto;
+
+        public int Codigorealproduto
+        {
+            get { return _codigorealproduto; }
+            set { _codigorealproduto = value; }
+        }
+
         public void RecebeUltimoProduto(int codigo)
         {
             DAL.ProdutosDAL produtos = new DAL.ProdutosDAL();
-            if (txtcodProduto.Text != string.Empty)
+            if (txtcodProduto.Text == string.Empty)
             {
+                if (produtos.getProdutos(codigo).Codigo == string.Empty)
+                {
+                    MessageBox.Show("Não existe registro para ser exibido", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 txtcodProduto.Text = produtos.getProdutos(codigo).Codigo.ToString();
                 txtProduto.Text = produtos.getProdutos(codigo).Descricao;
                 txtcodigofornecedor.Text = produtos.getProdutos(codigo).Fornecedor.ToString();
@@ -77,6 +90,7 @@ namespace RestauranteServidor.View
                 txtpreco.Text = produtos.getProdutos(codigo).Preco.ToString();
                 txtsubgrupo.Text = produtos.getProdutos(codigo).Desc_Subgrupo;
                 txtfornecedores.Text = produtos.getProdutos(codigo).Razao;
+                Codigorealproduto = produtos.getProdutos(codigo).Idauto;
                 if (produtos.getProdutos(codigo).Bloqueado == "N")
                 {
                     rbnao.Checked = true;
@@ -87,10 +101,6 @@ namespace RestauranteServidor.View
                     rbnao.Checked = false;
                     rbsim.Checked = true;
                 }
-            }
-            else
-            {
-                MessageBox.Show("Não existe registro para ser exibido","Aviso",MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -291,6 +301,7 @@ namespace RestauranteServidor.View
             if (MessageBox.Show("Tem certeza que deseja cancelar?", "AVISO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 BloquearCampos();
+                LimparCampos();
                 tsadicionar.Enabled = true;
                 tseditar.Enabled = true;
                 tsexcluir.Enabled = true;
@@ -566,7 +577,10 @@ namespace RestauranteServidor.View
 
         private void txtcodProduto_KeyPress(object sender, KeyPressEventArgs e)
         {
-           
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
         }
 
         private void txtcodbarras_KeyPress(object sender, KeyPressEventArgs e)

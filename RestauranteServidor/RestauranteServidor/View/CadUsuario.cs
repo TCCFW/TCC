@@ -396,6 +396,7 @@ namespace RestauranteServidor.View
             if (MessageBox.Show("Tem certeza que deseja cancelar?", "AVISO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 BloquearCampos();
+                LimparCampos();
                 tsadicionar.Enabled = true;
                 tseditar.Enabled = true;
                 tsexcluir.Enabled = true;

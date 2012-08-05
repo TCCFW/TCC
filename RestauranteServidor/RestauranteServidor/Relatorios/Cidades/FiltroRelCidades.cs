@@ -105,5 +105,13 @@ namespace RestauranteServidor.Relatorios.Cidades
             txtcidadeconsulta.Text = cidades.getCidades(Convert.ToInt32(txtcodigo.Text)).Cidade;
             mskuf.Text = cidades.getCidades(Convert.ToInt32(txtcodigo.Text)).UF;
         }
+
+        private void FiltroRelCidades_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
     }
 }

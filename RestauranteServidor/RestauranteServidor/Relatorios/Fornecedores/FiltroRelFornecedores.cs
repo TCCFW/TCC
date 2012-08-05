@@ -94,5 +94,13 @@ namespace RestauranteServidor.Relatorios.Fornecedores
                     break;
             }
         }
+
+        private void FiltroRelFornecedores_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
     }
 }

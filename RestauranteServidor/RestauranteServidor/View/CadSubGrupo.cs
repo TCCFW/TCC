@@ -185,6 +185,7 @@ namespace RestauranteServidor.View
             if (MessageBox.Show("Tem certeza que deseja cancelar?", "AVISO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 BloquearCampos();
+                LimparCampos();
                 tsadicionar.Enabled = true;
                 tseditar.Enabled = true;
                 tsexcluir.Enabled = true;
@@ -355,11 +356,10 @@ namespace RestauranteServidor.View
         private void txtcodgrupo_Leave(object sender, EventArgs e)
         {
             DAL.GruposDAL grupos = new DAL.GruposDAL();
-            if (txtcodgrupo.Text.Contains("'"))
+            if (txtgrupo.Text != string.Empty)
             {
-                txtcodgrupo.Text = txtcodgrupo.Text.Replace("'", "");
+                txtgrupo.Text = grupos.getGrupos(Convert.ToInt32(txtcodgrupo.Text)).Grupo;
             }
-            txtgrupo.Text = grupos.getGrupos(Convert.ToInt32(txtcodgrupo.Text)).Grupo;
         }
 
         private void txtcodgrupo_KeyDown(object sender, KeyEventArgs e)

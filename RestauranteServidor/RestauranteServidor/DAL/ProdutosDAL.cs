@@ -51,7 +51,7 @@ namespace RestauranteServidor.DAL
             {
 
                 conn = new SqlConnection(Strconexao);
-                SqlCommand comsql = new SqlCommand("delete from produtos where id=" + produtos.Codigo, conn);
+                SqlCommand comsql = new SqlCommand("delete from produtos where id='" + produtos.Codigo+"'", conn);
                 conn.Open();
                 comsql.ExecuteNonQuery();
             }
@@ -111,11 +111,11 @@ namespace RestauranteServidor.DAL
 
             if (codigo != 0)
             {
-                commandtext = "select produtos.id, produtos.descricao, produtos.fornecedor, produtos.estoque, produtos.cod_barra, produtos.bloqueado, produtos.preco, fornecedor.razao, subgrupo.codigo, subgrupo.subgrupo from produtos join fornecedor on fornecedor.codigo = produtos.fornecedor join subgrupo on subgrupo.codigo = produtos.subgrupo where produtos.id=" + codigo;
+                commandtext = "select produtos.id, produtos.descricao, produtos.fornecedor, produtos.estoque, produtos.cod_barra, produtos.bloqueado, produtos.preco, fornecedor.razao, subgrupo.codigo, subgrupo.subgrupo, produtos.idauto from produtos join fornecedor on fornecedor.codigo = produtos.fornecedor join subgrupo on subgrupo.codigo = produtos.subgrupo where produtos.id=" + codigo;
             }
             else
             {
-                commandtext = "select produtos.id, produtos.descricao, produtos.fornecedor, produtos.estoque, produtos.cod_barra, produtos.bloqueado, produtos.preco, fornecedor.razao, subgrupo.codigo, subgrupo.subgrupo from produtos join fornecedor on fornecedor.codigo = produtos.fornecedor join subgrupo on subgrupo.codigo = produtos.subgrupo";
+                commandtext = "select produtos.id, produtos.descricao, produtos.fornecedor, produtos.estoque, produtos.cod_barra, produtos.bloqueado, produtos.preco, fornecedor.razao, subgrupo.codigo, subgrupo.subgrupo,produtos.idauto from produtos join fornecedor on fornecedor.codigo = produtos.fornecedor join subgrupo on subgrupo.codigo = produtos.subgrupo";
             }
             Model.ProdutosModel produtos = new Model.ProdutosModel();
 
@@ -136,6 +136,7 @@ namespace RestauranteServidor.DAL
                     produtos.Razao = dr.GetString(7);
                     produtos.Cod_Subgrupo = dr.GetInt32(8);
                     produtos.Desc_Subgrupo = dr.GetString(9);
+                    produtos.Idauto = dr.GetInt32(10);
                 }
                 return produtos;
             }

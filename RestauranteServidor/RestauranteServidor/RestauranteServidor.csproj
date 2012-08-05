@@ -76,6 +76,7 @@
     <Compile Include="BLL\Criptografia.cs" />
     <Compile Include="BLL\FornecedorBLL.cs" />
     <Compile Include="BLL\GruposBLL.cs" />
+    <Compile Include="BLL\ItensPedidos.cs" />
     <Compile Include="BLL\MesasBLL.cs" />
     <Compile Include="BLL\PedidosBLL.cs" />
     <Compile Include="BLL\ProdutosBLL.cs" />

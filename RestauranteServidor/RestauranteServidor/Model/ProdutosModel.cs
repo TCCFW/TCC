@@ -82,5 +82,13 @@ namespace RestauranteServidor.Model
             get { return _desc_subgrupo; }
             set { _desc_subgrupo = value; }
         }
+
+        private int _idauto;
+
+        public int Idauto
+        {
+            get { return _idauto; }
+            set { _idauto = value; }
+        }
     }
 }

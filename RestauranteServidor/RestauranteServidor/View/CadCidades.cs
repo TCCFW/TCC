@@ -42,7 +42,6 @@ namespace RestauranteServidor.View
         {
 
             txtcidade.Enabled = true;
-            txtcodigocidade.Enabled = true;
             rbnao.Enabled = true;
             rbsim.Enabled = true;
             mskuf.Enabled = true;
@@ -203,6 +202,7 @@ namespace RestauranteServidor.View
             if (MessageBox.Show("Tem certeza que deseja cancelar?", "AVISO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 BloquearCampos();
+                LimparCampos();
                 tsadicionar.Enabled = true;
                 tseditar.Enabled = true;
                 tsexcluir.Enabled = true;
